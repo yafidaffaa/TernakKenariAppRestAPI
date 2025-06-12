@@ -1,5 +1,6 @@
 import 'package:canary/core/components/spaces.dart';
 import 'package:canary/data/model/response/burung_semua_tersedia_model.dart';
+import 'package:canary/presentation/auth/login_screen.dart';
 import 'package:canary/presentation/bloc/get_burung_tersedia/get_all_burung_tersedia_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _BuyerHomeScreenState extends State<BuyerHomeScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<GetBurungTersediaBloc>().add(GetAllBurungTersediaEvent());
+    context.read<GetBurungTersediaBloc>().add(GetBurungTersediaEvent());
   }
 
   @override
@@ -68,9 +69,7 @@ class _BuyerHomeScreenState extends State<BuyerHomeScreen> {
       body: RefreshIndicator(
         onRefresh: () async {
           // Refresh data burung tersedia
-          context.read<GetBurungTersediaBloc>().add(
-            GetAllBurungTersediaEvent(),
-          );
+          context.read<GetBurungTersediaBloc>().add(GetBurungTersediaEvent());
         },
         child: Column(
           children: [
