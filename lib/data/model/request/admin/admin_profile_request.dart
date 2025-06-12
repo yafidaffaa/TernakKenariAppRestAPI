@@ -8,10 +8,10 @@ class AdminProfileRequestModel {
   factory AdminProfileRequestModel.fromRawJson(String str) =>
       AdminProfileRequestModel.fromJson(json.decode(str));
 
-  String toRawJson() => json.encode(toJson());
+  String toRawJson() => json.encode(toMap());
 
   factory AdminProfileRequestModel.fromJson(Map<String, dynamic> json) =>
       AdminProfileRequestModel(name: json["name"]);
 
-  Map<String, dynamic> toJson() => {"name": name};
+  Map<String, dynamic> toMap() => {"name": name};
 }
